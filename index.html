@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hao Pham</title>
+<meta name="description" content="Hao Pham: undergraduate researcher in medical AI at the University of Houston's HULA Lab, applying to PhD programs for Fall 2027.">
+<link rel="canonical" href="https://nighthunter57.github.io/">
+<meta property="og:title" content="Hao Pham">
+<meta property="og:description" content="Undergraduate researcher in medical AI at the University of Houston's HULA Lab. Applying to PhD programs for Fall 2027.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nighthunter57.github.io/">
+<meta property="og:image" content="https://nighthunter57.github.io/assets/hao.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%233D2C8D'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23C83C74' stroke-width='4'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  /* Specimen (A): H&E stain palette, serif, research timeline.
+     Field notes (D): notebook grid, handwriting, polaroid, stickers. */
+  :root {
+    --glass: #FCFBFE; --grid: #EEEAF5; --paper: #FFFFFF;
+    --ink: #1E1B2E; --muted: #625F75; --rule: #E7E3EF;
+    --hema: #3D2C8D; --hema-wash: #EFECFA;
+    --eosin: #C83C74; --eosin-wash: #FBE6EF;
+    --sun: #FFC93D;
+    --serif: "Newsreader", Georgia, serif; --sans: "Instrument Sans", system-ui, sans-serif; --hand: "Caveat", cursive;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --glass: #16141F; --grid: #1F1C2B; --paper: #1D1A28; --ink: #ECE9F5; --muted: #A6A2B8; --rule: #2E2A3C;
+      --hema: #B3A6FF; --hema-wash: #241F38; --eosin: #FF8DB8; --eosin-wash: #3A1E2C;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; color: var(--ink); font: 400 19px/1.62 var(--serif);
+    background-color: var(--glass);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px; }
+  a { color: var(--hema); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--eosin); }
+  a:focus-visible { outline: 2px solid var(--eosin); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 64px 28px 88px; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1fr 290px; gap: 56px; align-items: center; }
+  .tr { font: 400 14px var(--sans); color: var(--muted); margin-left: 8px; vertical-align: 4px; }
+  .hello { font: 700 30px var(--hand); color: var(--eosin); margin: 0; display: inline-block; transform: rotate(-2deg); }
+  h1 { font-weight: 500; font-size: 60px; line-height: 1; margin: 2px 0 6px; letter-spacing: -0.015em; }
+  .fullname { font: 400 15px var(--sans); color: var(--muted); margin: 0 0 14px !important; letter-spacing: .01em; }
+  .role { font: 600 16px/1.5 var(--sans); color: var(--hema); margin: 0 0 20px; }
+  .role span { color: var(--muted); font-weight: 400; }
+  .hero p { margin: 0 0 14px; max-width: 40ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .chip { font: 600 15px var(--sans); color: var(--ink); text-decoration: none; padding: 8px 15px; border-radius: 99px; background: var(--paper); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); transition: transform .12s, box-shadow .12s; }
+  .chip.cv { background: var(--hema); border-color: var(--hema); color: #fff; box-shadow: 3px 3px 0 var(--ink); }
+  .chip:hover { color: var(--ink); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--ink); }
+  .chip.cv:hover { color: #fff; }
+  .chip:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+
+  .polaroid { margin: 0; background: #fff; padding: 14px 14px 54px; border-radius: 3px; box-shadow: 0 20px 34px -20px rgba(30,27,46,.5); transform: rotate(3deg); position: relative; transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+  .polaroid:hover { transform: rotate(-1deg) scale(1.02); }
+  .polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 12%; display: block; }
+  .polaroid .mag { position: absolute; right: 22px; top: calc(100% - 92px); font: 600 12px var(--sans); background: var(--hema); color: #fff; padding: 3px 9px; border-radius: 99px; }
+  .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font: 600 23px var(--hand); color: #1E1B2E; }
+  .tape { position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; margin-left: -55px; background: color-mix(in srgb, var(--sun) 72%, transparent); transform: rotate(-4deg); }
+
+  /* Handwritten quotes in the margins */
+  .margin-quote { margin: 72px auto 0; max-width: 640px; text-align: center; transform: rotate(-1.2deg); }
+  .margin-quote p { margin: 0; font: 700 34px/1.15 var(--hand); color: var(--eosin); }
+  .margin-quote small { display: block; margin-top: 6px; font: 400 15px var(--sans); color: var(--muted); }
+  .margin-quote small i { font-family: var(--serif); }
+  .margin-quote.right { transform: rotate(1deg); }
+  .margin-quote p.vi { font: 400 32px/1.2 "Patrick Hand", var(--hand); } /* Caveat has no Vietnamese glyphs */
+
+  .interests { margin-top: 64px; padding: 18px 22px; background: var(--hema-wash); border-radius: 10px; font-size: 18px; }
+  .interests b { font: 600 15px var(--sans); color: var(--hema); display: block; margin-bottom: 2px; }
+
+  h2 { font-weight: 500; font-size: 36px; margin: 88px 0 2px; letter-spacing: -0.01em; }
+  .sub { font: 500 24px var(--hand); color: var(--muted); margin: 0 0 26px; }
+
+  /* Research notebook. The red margin rule doubles as the timeline. */
+  .notebook { position: relative; background: var(--paper); border-radius: 8px; padding: 44px 44px 44px 0; box-shadow: 0 1px 0 var(--rule), 0 26px 46px -32px rgba(30,27,46,.45); }
+  .notebook::before { content: ""; position: absolute; left: 150px; top: 0; bottom: 0; width: 2px; background: var(--eosin); opacity: .4; }
+  .exp { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 34px; padding-bottom: 40px; }
+  .exp:last-child { padding-bottom: 0; }
+  .exp::before { content: ""; position: absolute; left: 143px; top: 9px; width: 16px; height: 16px; border-radius: 50%; background: var(--paper); border: 2px solid var(--hema); }
+  .exp.now::before { background: var(--eosin); border-color: var(--eosin); box-shadow: 0 0 0 5px var(--eosin-wash); }
+  .exp.planned::before { border-style: dashed; }
+  .when { text-align: right; padding-right: 26px; font: 700 24px/1.1 var(--hand); color: var(--hema); }
+  .now .when { color: var(--eosin); }
+  .when small { display: block; font-size: 19px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+  .exp h3 { font-size: 25px; font-weight: 600; line-height: 1.2; margin: 0 0 3px; }
+  .where { font: 400 15px/1.5 var(--sans); color: var(--muted); margin: 0 0 10px; }
+  .exp ul { margin: 0; padding-left: 20px; font-size: 18px; }
+  .exp li { margin: 4px 0; }
+  .exp li::marker { color: var(--eosin); }
+  .hl { background: linear-gradient(transparent 58%, color-mix(in srgb, var(--sun) 60%, transparent) 58%); }
+  .scribble { display: inline-block; margin-top: 10px; font: 700 23px/1.2 var(--hand); color: var(--eosin); transform: rotate(-1deg); }
+  .pill { display: inline-block; margin-top: 10px; font: 600 13px var(--sans); padding: 3px 10px; border-radius: 99px; background: var(--eosin-wash); color: var(--eosin); }
+
+  /* Work experience reuses the notebook timeline, in hematoxylin purple */
+  .notebook.work::before { background: var(--hema); opacity: .3; }
+  .notebook.work .exp.now::before { background: var(--hema); border-color: var(--hema); box-shadow: 0 0 0 5px var(--hema-wash); }
+  .notebook.work .now .when { color: var(--hema); }
+  .skills-used { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .skills-used span { font: 500 13px var(--sans); padding: 3px 10px; border-radius: 99px; background: var(--hema-wash); color: var(--hema); }
+
+  .ptitle { margin: 0 0 10px; font-style: italic; font-size: 18px; color: var(--ink); }
+  .exp li b { font-weight: 600; }
+  .links-row { margin-top: 8px; font: 500 14px var(--sans); }
+  .venue { margin: 0 0 6px; font: 400 14px/1.45 var(--sans); color: var(--eosin); }
+  .venue b { font-weight: 700; }
+
+  /* Manuscripts */
+  .papers { background: var(--paper); border-radius: 8px; padding: 8px 32px; box-shadow: 0 1px 0 var(--rule); }
+  .paper { display: grid; grid-template-columns: 136px 1fr; gap: 26px; padding: 24px 0; }
+  .paper + .paper { border-top: 2px dashed var(--rule); }
+  .thumb { width: 136px; height: 100px; border-radius: 6px; overflow: hidden; }
+  .thumb svg { width: 100%; height: 100%; display: block; }
+  .paper h3 { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0 0 6px; }
+  .authors { font-size: 16px; color: var(--muted); margin: 0 0 8px; }
+  .authors b { color: var(--ink); font-weight: 600; }
+  .status { display: inline-block; font: 600 12px var(--sans); padding: 2px 9px; border-radius: 99px; margin-right: 8px; }
+  .status.review { background: var(--eosin-wash); color: var(--eosin); }
+  .status.prep { color: var(--muted); box-shadow: inset 0 0 0 1px var(--rule); }
+  .plinks { font: 500 14px var(--sans); }
+
+  /* Also built: compact sticker cards */
+  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card { position: relative; background: var(--paper); border: 2px solid var(--ink); border-radius: 8px; padding: 22px 22px 20px; }
+  .card:nth-child(1) { transform: rotate(-1deg); } .card:nth-child(3) { transform: rotate(1deg); }
+  .card h3 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  .card p { margin: 0; font-size: 16px; }
+  .card .stack { font: 400 13px var(--sans); color: var(--muted); margin-top: 8px; }
+  .sticker { position: absolute; top: -18px; right: -10px; width: 80px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; text-align: center; padding: 8px; font: 700 12px/1.15 var(--sans); background: var(--sun); color: #1E1B2E; border: 2px solid var(--ink); transform: rotate(10deg); }
+  .sticker.pink { background: var(--eosin); color: #fff; transform: rotate(-8deg); }
+
+  /* Off the clock: xiangqi */
+  .xq { display: grid; grid-template-columns: 290px 1fr; gap: 44px; align-items: center; background: var(--paper); border-radius: 8px; padding: 36px 40px; position: relative; box-shadow: 0 1px 0 var(--rule), 0 26px 46px -32px rgba(30,27,46,.45); }
+  .xq-board { transform: rotate(-2deg); }
+  .xq-board svg { width: 100%; height: auto; display: block; }
+  .xq-board figcaption { margin-top: 10px; text-align: center; font: 700 21px/1.2 var(--hand); color: var(--eosin); }
+  .xq h3 { font-size: 28px; font-weight: 600; margin: 0 0 4px; line-height: 1.2; }
+  .xq .vi-term { font-style: italic; }
+  .xq .tr2 { font: 400 15px var(--sans); color: var(--muted); }
+  .xq ul { margin: 14px 0 0; padding-left: 20px; }
+  .xq li { margin: 6px 0; }
+  .xq li::marker { color: var(--eosin); }
+  .xq .brag { margin: 12px 0 0; font-size: 20px; }
+  .xq .brag b { background: linear-gradient(transparent 58%, color-mix(in srgb, var(--sun) 60%, transparent) 58%); font-weight: 600; }
+  .xq .sticker { top: -22px; right: -12px; width: 96px; }
+  .xq .challenge { display: inline-block; margin-top: 18px; }
+
+  /* Bookshelf */
+  .shelf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 44px 28px; }
+  .book { display: flex; flex-direction: column; }
+  .cover { width: 104px; height: 156px; border-radius: 3px 7px 7px 3px; padding: 12px 10px 10px 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: inset 7px 0 0 rgba(0,0,0,.16), 0 14px 20px -14px rgba(30,27,46,.6); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .book:nth-child(odd) .cover { transform: rotate(-2deg); }
+  .book:nth-child(even) .cover { transform: rotate(1.5deg); }
+  .book:hover .cover { transform: rotate(0) translateY(-4px); }
+  .cover b { font: 600 15px/1.1 var(--serif); }
+  .cover i { font: 400 10px/1.2 var(--sans); font-style: normal; opacity: .85; }
+  .book h3 { font: 600 17px/1.3 var(--sans); margin: 18px 0 0; }
+  .book .by { font: 400 14px/1.4 var(--sans); color: var(--muted); margin: 2px 0 10px; }
+  .book blockquote { margin: 0; padding-left: 12px; border-left: 2px solid var(--eosin); font-style: italic; font-size: 18px; line-height: 1.45; }
+
+  /* Footer */
+  .last { margin-top: 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+  .last blockquote { margin: 0; font-size: 28px; line-height: 1.3; font-style: italic; }
+  .sticky { background: #FFF6C9; color: #1E1B2E; padding: 26px 30px; transform: rotate(-1.5deg); box-shadow: 0 14px 24px -16px rgba(0,0,0,.4); font: 500 25px/1.3 var(--hand); }
+  .sticky ol { margin: 8px 0 0; padding-left: 26px; }
+  .row { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 17px; }
+  .row .k { font: 600 14px/1.8 var(--sans); color: var(--muted); }
+  .row p { margin: 0; }
+  footer { margin-top: 64px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  footer .made { margin-left: auto; font: 400 15px var(--serif); color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) { .polaroid, .chip, .cover { transition: none; } }
+  @media (max-width: 820px) {
+    .shelf { grid-template-columns: repeat(2, 1fr); }
+    .board { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 17px; }
+    .wrap { padding: 36px 16px 64px; }
+    .hero { grid-template-columns: 1fr; gap: 36px; }
+    .polaroid { max-width: 240px; order: -1; margin: 10px auto 0; }
+    h1 { font-size: 46px; }
+    h2 { font-size: 30px; margin-top: 72px; }
+    .margin-quote p { font-size: 28px; }
+    .notebook { padding: 28px 18px 28px 0; }
+    .notebook::before { left: 18px; }
+    .exp { grid-template-columns: 1fr; gap: 4px; padding-left: 44px; }
+    .exp::before { left: 11px; top: 4px; }
+    .when { text-align: left; padding: 0; }
+    .exp ul { font-size: 17px; }
+    .papers { padding: 4px 18px; }
+    .paper { grid-template-columns: 1fr; gap: 12px; }
+    .thumb { width: 100%; height: 100px; }
+    .shelf { grid-template-columns: 1fr; gap: 36px; }
+    .book { display: grid; grid-template-columns: 84px 1fr; gap: 0 18px; }
+    .cover { width: 84px; height: 126px; grid-row: span 3; }
+    .cover b { font-size: 12px; }
+    .book h3 { margin-top: 0; }
+    .last { grid-template-columns: 1fr; }
+    .xq { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+    .xq-board { max-width: 250px; margin: 0 auto; }
+    .last blockquote { font-size: 23px; }
+    footer .made { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <p class="hello"><span lang="vi">xin chào!</span><span class="tr">(hello!)</span></p>
+      <h1>Hao Pham</h1>
+      <p class="fullname" lang="vi">Huynh Anh Hao Pham</p>
+      <p class="role">Research Assistant, HULA Lab <span>with Prof. Hien Van Nguyen, University of Houston</span></p>
+      <p>I study how pathologists gather evidence on whole-slide images. I built TimeStamp, a tool that records where a pathologist looks, what they say, and in what order. A nephropathologist now uses it on real patient cases.</p>
+      <p>CS major, math minor. Applying to PhD programs for Fall 2027.</p>
+      <nav class="chips" aria-label="Contact and profiles">
+        <a class="chip" href="mailto:haopham52d@gmail.com">Email</a>
+        <a class="chip" href="https://github.com/nighthunter57">GitHub</a>
+        <a class="chip" href="https://www.linkedin.com/in/hao-pham-71b01924b/">LinkedIn</a>
+      </nav>
+    </div>
+    <figure class="polaroid">
+      <span class="tape"></span>
+      <img src="assets/hao.jpg" alt="Portrait of Hao Pham">
+      <span class="mag">40×</span>
+      <figcaption>specimen: 1 undergrad</figcaption>
+    </figure>
+  </section>
+
+  <aside class="margin-quote">
+    <p>"Die Luft der Freiheit weht."</p>
+    <small>The wind of freedom blows. Ulrich von Hutten</small>
+  </aside>
+
+  <div class="interests"><b>Research interests</b>Computer vision and multimodal learning for medical images, how clinicians search for diagnostic evidence, human–robot interaction for clinical training, and optimization for machine learning.</div>
+
+  <h2 id="research">Research experience</h2>
+  <p class="sub">where most of my time actually goes</p>
+  <ol class="notebook" style="list-style:none">
+
+    <li class="exp now">
+      <div class="when">Dec 2025<small>to now</small></div>
+      <div>
+        <h3>Research Assistant, Houston Learning Algorithms (HULA) Lab</h3>
+        <p class="where">Department of Electrical and Computer Engineering, University of Houston. Advisor: Prof. Hien Van Nguyen</p>
+        <ul>
+          <li><b>Built TimeStamp end to end:</b> a Java/JavaFX extension for QuPath plus a Python recorder that puts a pathologist's slide navigation, cursor trajectory, image events, and spoken dictation on one session clock. It exports word- and segment-level timestamps and event logs as CSV/JSON for analysis.</li>
+          <li><b>Traced a hard failure through the whole pipeline.</b> During long dictation the live transcript looked incomplete. After Whisper settings and audio segmentation didn't fix it, I rebuilt live updates to show only words that stay stable across consecutive passes, then found a second cause: a display rule hiding a legitimate 137-word line that was already in the data.</li>
+          <li><b>Fixed timing so speech matches the screen:</b> corrected clock alignment so speech after a pause is no longer stamped up to about 15 seconds early, and turned mouse tracking on by default so no trajectory data is lost.</li>
+          <li><b>Built for the clinician on the other end:</b> transcript review that keeps the original text and timing, pause, resume, and crash recovery, exports verified with integrity checks, and one-step installers for Windows, macOS, and Linux that bundle their own Python and models, so a pathologist never sets anything up.</li>
+          <li>Analyze medical images, eye-gaze coordinates, and timestamps to study radiologist fatigue, satisfaction of search, and diagnostic performance.</li>
+        </ul>
+        <span class="scribble">now used by Dr. Jan Ulrich Becker on real patient cases ✓</span>
+        <div class="links-row"><a href="https://github.com/nighthunter57/QuPath_TimeStamp_extension">TimeStamp on GitHub</a></div>
+      </div>
+    </li>
+
+    <li class="exp now">
+      <div class="when">Fall 2026<small>pilot, ongoing</small></div>
+      <div>
+        <h3>A world model of physician diagnostic behavior</h3>
+        <p class="where">HULA Lab, with Dr. Jan Ulrich Becker (nephropathology, University Hospital Cologne)</p>
+        <ul>
+          <li><b>The idea:</b> AI usually learns image → diagnosis. A physician actually inspects a region, observes evidence, updates their interpretation, and inspects the next region. We want to learn that loop: image + diagnostic history → current diagnostic state → next action → updated state.</li>
+          <li><b>Pilot:</b> about 30 cases recorded during normal reading, with the image, mouse trajectory, dictation, findings, and final report synchronized, keeping extra annotation work for physicians to a minimum.</li>
+          <li><b>Questions:</b> can we identify diagnostic stages, infer which finding is being investigated, predict the next region inspected or finding reported, and compare search strategies across physicians?</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="exp planned">
+      <div class="when">Spring 2027<small>proposed</small></div>
+      <div>
+        <h3>Provost's Undergraduate Research Scholarship (PURS)</h3>
+        <p class="where">Qian Group, University of Houston. Mentor: Prof. Peizhu (Pam) Qian</p>
+        <p class="ptitle">"A Robotic Tutor Supporting Educators Through Observability-Aware Scaffolding"</p>
+        <ul>
+          <li><b>The problem:</b> in nursing simulation, a robotic tutor can introduce challenges and watch for procedural mistakes, but its actions can also pull the educator's attention away from the student. If a mistake happens at that moment and nobody notices, the student loses the feedback. Even the lab's robotic tutor, ASTRID, missed about one in six expert-identified sterile-technique violations.</li>
+          <li><b>Research questions:</b> (1) How can a robot supplement educators so that, together, fewer mistakes are missed? (2) When should it introduce a challenge so the learner benefits most?</li>
+          <li><b>My proposal, observability-aware scaffolding:</b> time each challenge by whether the educator or the robot will actually be able to see the student's response.</li>
+          <li><b>Plan (15 weeks, about 100 hours):</b> build simulated central-line procedure sequences with mentor-approved sterile-technique errors and a simulated Stretch robot. Then run a small observer pilot with timestamped responses and eye tracking, subject to IRB approval. Finally, model who detects each error (educator, robot, both, or neither) and compare a timing policy against scripted timing, a simple rule, and adaptive probing that ignores observability.</li>
+          <li><b>Next step from Prof. Qian's feedback:</b> formalize the timing problem as a POMDP (partially observable Markov decision process), so the policy rests on a rigorous model of partial observability and attention rather than heuristics.</li>
+        </ul>
+        <span class="pill">Funding decision pending</span>
+      </div>
+    </li>
+
+    <li class="exp">
+      <div class="when">Summer 2026<small>10 weeks, full time</small></div>
+      <div>
+        <h3>Summer Undergraduate Research Fellowship (SURF)</h3>
+        <p class="where">Office of Undergraduate Research, University of Houston. Mentor: Prof. Hien Van Nguyen. Collaborator: Dr. Jan Ulrich Becker</p>
+        <p class="ptitle">"Predictive Modeling of Clinician Fatigue and Diagnostic Accuracy via Eye-Gaze Analysis"</p>
+        <ul>
+          <li><b>Proposed</b> comparing expert and trainee gaze to separate three kinds of perceptual error: missing fixation, reduced fixation, and incomplete knowledge.</li>
+          <li><b>Prepared a large pathology corpus:</b> the KPMP kidney biopsy collection of 6,515 whole-slide images from 604 participants (about 2.2 TB, seven stain groups), with clinical labels fully reconciled. I built analytics on glomeruli segmentation and morphometry across disease classes.</li>
+          <li><b>Designed a multi-observer dataset protocol</b> in which the same slide is reviewed independently by several pathologists, with gaze, QuPath navigation, dictation, findings, and confidence synchronized. The goal is to study why a second finding gets missed after the first is found.</li>
+          <li><b>Deployed TimeStamp</b> with Dr. Becker to record real pathology reading sessions.</li>
+          <li>Completed CITI human-subjects research training.</li>
+        </ul>
+        <span class="pill">$4,000 fellowship</span>
+      </div>
+    </li>
+
+    <li class="exp">
+      <div class="when">Spring 2026</div>
+      <div>
+        <h3>Undergraduate Research to PhD (UR2PhD)</h3>
+        <p class="where">University of Houston. Mentor: Prof. Jianyi Yang</p>
+        <ul>
+          <li>Proposed linking electricity-demand and price forecasts to EV charging strategies that reduce peak load and charging costs.</li>
+          <li>Designed comparisons of linear regression, random forests, and LSTMs on CAISO grid data and ACN-Data charging sessions, with transfer learning for data-scarce sites.</li>
+          <li>Planned SHAP/LIME interpretation and evaluation by RMSE, MAPE, simulated peak-load reduction, and charging-cost savings.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="exp">
+      <div class="when">2025<small>to 2026</small></div>
+      <div>
+        <h3>ProtoWSSS: weakly supervised segmentation in histopathology</h3>
+        <p class="where">Collaboration led by Dr. Anh Mai Vu</p>
+        <ul>
+          <li><b>The method:</b> a one-stage framework that learns tissue regions from image-level labels alone, guided by learnable image prototypes and prompt-guided text prototypes, with a diversity term to cover varied tissue appearance. Evaluated on BCSS-WSSS and LUAD-HistoSeg.</li>
+          <li><b>My part:</b> reproduced reported experiments, traced discrepancies in the results, ran ablations, and changed code and settings to test improvements.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="exp">
+      <div class="when">Summer 2025</div>
+      <div>
+        <h3>Partial optimal transport with a mixed-norm regularizer</h3>
+        <p class="where">Acuitas Education summer research program. Supervisors: Minh Son Pham Dinh, Hai Lam Le, Gia Binh Tran, Minh Khoa Nguyen</p>
+        <ul>
+          <li>Studied partial optimal transport, which moves only part of the mass between two distributions, with a mixed-norm elastic regularizer solved by an exterior-penalty method.</li>
+          <li>The work is now being prepared as a journal manuscript (see below).</li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+
+  <h2 id="manuscripts">Manuscripts</h2>
+  <p class="sub">fingers crossed</p>
+  <div class="papers">
+    <article class="paper">
+      <div class="thumb" aria-hidden="true">
+        <svg viewBox="0 0 150 110"><rect width="150" height="110" fill="#F6D3E2"/>
+          <g fill="#E7A6C3"><circle cx="30" cy="25" r="22"/><circle cx="110" cy="80" r="30"/><circle cx="85" cy="20" r="16"/></g>
+          <g fill="#4B3B8F" opacity=".8"><circle cx="22" cy="30" r="4"/><circle cx="40" cy="18" r="3.5"/><circle cx="60" cy="60" r="4"/><circle cx="72" cy="52" r="3"/><circle cx="104" cy="70" r="5"/><circle cx="120" cy="90" r="4"/><circle cx="96" cy="94" r="3.5"/><circle cx="88" cy="24" r="3"/><circle cx="130" cy="40" r="3.5"/><circle cx="16" cy="84" r="4"/><circle cx="44" cy="92" r="3"/></g>
+          <path d="M50 45 Q75 30 95 55 T 140 60" stroke="#C83C74" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/></svg>
+      </div>
+      <div>
+        <p class="venue">Advanced to <b>second-round review at WACV 2026</b> (IEEE/CVF Winter Conference on Applications of Computer Vision, Algorithms Track). Revised version in preparation for resubmission.</p>
+        <h3>ProtoWSSS: Prototype-Guided Weakly Supervised Semantic Segmentation in Histopathology</h3>
+        <p class="authors">Anh Mai Vu, Khang Phuc Le, Ha Thach, Thi Kim Trang Vo, Thanh-Huy Nguyen, Hung Nguyen Huy, Quynh Nguyen, Tuan Anh Le, <b>Huynh Anh Hao Pham</b>, et al.</p>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="thumb" aria-hidden="true">
+        <svg viewBox="0 0 150 110"><rect width="150" height="110" fill="#ECE8F7"/>
+          <g stroke="#3D2C8D" stroke-width="1.2" opacity=".55" fill="none"><path d="M20 30 C60 30 80 70 130 75"/><path d="M20 50 C60 50 80 40 130 30"/><path d="M20 70 C60 72 90 90 130 92"/><path d="M20 90 C70 85 80 55 130 52"/></g>
+          <g fill="#3D2C8D"><circle cx="20" cy="30" r="5"/><circle cx="20" cy="50" r="4"/><circle cx="20" cy="70" r="6"/><circle cx="20" cy="90" r="3.5"/></g>
+          <g fill="#C83C74"><circle cx="130" cy="75" r="5"/><circle cx="130" cy="30" r="4.5"/><circle cx="130" cy="92" r="4"/><circle cx="130" cy="52" r="6"/></g></svg>
+      </div>
+      <div>
+        <p class="venue">Preparing for submission to <b>Operations Research Letters</b> (Elsevier)</p>
+        <h3>An Exterior-Penalty Method for Partial Optimal Transport with a Mixed-Norm Elastic Regularizer</h3>
+        <p class="authors">Khoa Nguyen, Minh Thong Huynh, Thu-Nhan Truong, Dung T. Nguyen, <b>Huynh Anh Hao Pham</b>, Hai Lam Le, Dinh Minh Son Pham, Gia Binh Tran, Minh Ngoc Dinh</p>
+      </div>
+    </article>
+  </div>
+
+  <aside class="margin-quote right">
+    <p>"In the end, we only regret the chances we didn't take."</p>
+    <small>Origin unknown. Often credited to Lewis Carroll, though nothing links it to him.</small>
+  </aside>
+
+  <h2 id="work">Work experience</h2>
+  <p class="sub">the other half of the week</p>
+  <ol class="notebook work" style="list-style:none" reversed>
+    <li class="exp now">
+      <div class="when">Mar 2026<small>to now</small></div>
+      <div>
+        <h3>IT Support Agent</h3>
+        <p class="where">University of Houston, Houston, TX</p>
+        <ul>
+          <li>Troubleshoot sign-in, password, account access, and system problems for students, faculty, and staff across the university's IT systems.</li>
+          <li>Find the root cause of account and system incidents, and work with the university's IT teams to resolve them instead of only patching the symptom.</li>
+          <li>Support identity and access management: account provisioning, multifactor authentication (MFA), access verification, and secure account practices.</li>
+          <li>Explain account-recovery procedures in plain language to students, faculty, and staff.</li>
+        </ul>
+        <div class="skills-used"><span>Root-cause analysis</span><span>Identity and access management</span><span>MFA</span><span>Clear communication</span></div>
+      </div>
+    </li>
+    <li class="exp">
+      <div class="when">Jan 2024<small>to Mar 2025</small></div>
+      <div>
+        <h3>Lead Academic Tutor and Proctor</h3>
+        <p class="where">CASA Program, University of Houston, Houston, TX</p>
+        <ul>
+          <li>Mentored more than 100 students in advanced mathematics and problem solving through guided practice, working through problems with them rather than for them.</li>
+          <li>Designed instructional materials to strengthen the math foundations that computer science courses depend on.</li>
+          <li>Proctored exams and supported testing-center operations, and streamlined the center's administrative workflows.</li>
+        </ul>
+        <div class="skills-used"><span>Teaching</span><span>Mathematics</span><span>Curriculum materials</span><span>Operations</span></div>
+      </div>
+    </li>
+  </ol>
+
+  <h2>Also built</h2>
+  <p class="sub">mostly at hackathons, mostly at 3 a.m.</p>
+  <div class="board">
+    <article class="card"><span class="sticker pink">Most Immersive</span><h3><a href="https://github.com/hungqbui/codered26_celestisign">CelestiSign</a></h3><p>Sign the ASL letter on each falling asteroid to blast it. We reported 96.4% cross-validated accuracy and a stricter 86.6% on unseen photo sources.</p><p class="stack">TensorFlow.js, MediaPipe. CodeRED Orion 2026</p></article>
+    <article class="card"><span class="sticker">Track winner</span><h3>MathSpeech</h3><p>Snap handwritten homework, hear it explained step by step.</p><p class="stack">Gemini, Mathpix, MongoDB. CodeRED Astra 2025</p></article>
+    <article class="card"><span class="sticker">$1,000</span><h3><a href="https://github.com/nighthunter57/Energix_CoogsForEnergy">Energix</a></h3><p>Balance a power grid before the AI data centers eat it.</p><p class="stack">React, Node.js. Coogs for Energy 2026</p></article>
+  </div>
+
+  <h2 id="books">On my shelf</h2>
+  <p class="sub">one line I kept from each</p>
+  <div class="shelf">
+    <article class="book">
+      <div class="cover" style="background:#D9A441;color:#2B1A05"><b>Dune</b><i>Frank Herbert</i></div>
+      <h3>Dune</h3><p class="by">Frank Herbert</p>
+      <blockquote>"I must not fear. Fear is the mind-killer."</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#1F4E79;color:#F3E9D2"><b>The Odyssey</b><i>Homer</i></div>
+      <h3>The Odyssey</h3><p class="by">Homer, translated by Emily Wilson</p>
+      <blockquote>"Tell me about a complicated man."</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#F3B6C2;color:#5A1830"><b>Love, Rosie</b><i>Cecelia Ahern</i></div>
+      <h3>Love, Rosie</h3><p class="by">Cecelia Ahern (first published as <i>Where Rainbows End</i>)</p>
+      <blockquote>"I've learned that home isn't a place, it's a feeling."</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#F2F1EC;color:#1B2A4A;box-shadow:inset 7px 0 0 rgba(0,0,0,.08),inset 0 0 0 1px #D9D6CC,0 14px 20px -14px rgba(30,27,46,.6)"><b>Zero to One</b><i>Peter Thiel with Blake Masters</i></div>
+      <h3>Zero to One</h3><p class="by">Peter Thiel with Blake Masters</p>
+      <blockquote>"What important truth do very few people agree with you on?"</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#A8372B;color:#FBEDE4"><b>Why Nations Fail</b><i>Acemoğlu &amp; Robinson</i></div>
+      <h3>Why Nations Fail</h3><p class="by">Daron Acemoğlu and James A. Robinson</p>
+      <blockquote>"Nations fail today because their extractive economic institutions do not create the incentives needed for people to save, invest, and innovate."</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#F2C230;color:#1E1B2E"><b>The Unfair Advantage</b><i>Ash Ali &amp; Hasan Kubba</i></div>
+      <h3>The Unfair Advantage</h3><p class="by">Ash Ali and Hasan Kubba</p>
+      <blockquote>"There's always somebody you know who knows something you don't."</blockquote>
+    </article>
+    <article class="book">
+      <div class="cover" style="background:#6CB4E4;color:#0E2A44"><b>The Fault in Our Stars</b><i>John Green</i></div>
+      <h3>The Fault in Our Stars</h3><p class="by">John Green</p>
+      <blockquote>"Some infinities are bigger than other infinities."</blockquote>
+    </article>
+    <article class="book next">
+      <div class="cover" style="background:transparent;color:var(--muted);box-shadow:none;border:2px dashed var(--rule);justify-content:center;align-items:center;padding:10px"><b style="font-size:34px">?</b></div>
+      <h3>Next on my shelf</h3><p class="by">Your pick</p>
+      <blockquote style="border-color:var(--rule);font-style:normal;font-size:17px"><a href="mailto:haopham52d@gmail.com?subject=A%20book%20you%20should%20read">Recommend me a book</a></blockquote>
+    </article>
+  </div>
+
+  <h2 id="xiangqi">Off the clock</h2>
+  <p class="sub">the part that isn't on my CV (yet)</p>
+  <div class="xq">
+    <span class="sticker pink">Medalist, Vietnam tournaments</span>
+    <figure class="xq-board" style="margin:0">
+      <svg viewBox="0 0 260 288" role="img" aria-label="A xiangqi board. A red soldier has crossed the river, circled in yellow."><rect width="260" height="288" rx="6" fill="#F6E7C8"/><g stroke="#5A4630" stroke-width="1" opacity=".75"><line x1="18" y1="18" x2="242" y2="18"/><line x1="18" y1="46" x2="242" y2="46"/><line x1="18" y1="74" x2="242" y2="74"/><line x1="18" y1="102" x2="242" y2="102"/><line x1="18" y1="130" x2="242" y2="130"/><line x1="18" y1="158" x2="242" y2="158"/><line x1="18" y1="186" x2="242" y2="186"/><line x1="18" y1="214" x2="242" y2="214"/><line x1="18" y1="242" x2="242" y2="242"/><line x1="18" y1="270" x2="242" y2="270"/><line x1="18" y1="18" x2="18" y2="270"/><line x1="46" y1="18" x2="46" y2="130"/><line x1="46" y1="158" x2="46" y2="270"/><line x1="74" y1="18" x2="74" y2="130"/><line x1="74" y1="158" x2="74" y2="270"/><line x1="102" y1="18" x2="102" y2="130"/><line x1="102" y1="158" x2="102" y2="270"/><line x1="130" y1="18" x2="130" y2="130"/><line x1="130" y1="158" x2="130" y2="270"/><line x1="158" y1="18" x2="158" y2="130"/><line x1="158" y1="158" x2="158" y2="270"/><line x1="186" y1="18" x2="186" y2="130"/><line x1="186" y1="158" x2="186" y2="270"/><line x1="214" y1="18" x2="214" y2="130"/><line x1="214" y1="158" x2="214" y2="270"/><line x1="242" y1="18" x2="242" y2="270"/><line x1="102" y1="18" x2="158" y2="74"/><line x1="158" y1="18" x2="102" y2="74"/><line x1="102" y1="214" x2="158" y2="270"/><line x1="158" y1="214" x2="102" y2="270"/></g><g font-family="Songti SC, Noto Serif SC, Noto Serif CJK SC, serif" font-size="15" fill="#5A4630" opacity=".8"><text x="58" y="149">楚　河</text><text x="166" y="149">漢　界</text></g><g font-family="Songti SC, Noto Serif SC, Noto Serif CJK SC, serif" font-weight="700"><circle cx="130" cy="18" r="12.5" fill="#FFF7E8" stroke="#1E1B2E" stroke-width="1.6"/><text x="130" y="23" text-anchor="middle" font-size="14" fill="#1E1B2E">將</text><circle cx="214" cy="18" r="12.5" fill="#FFF7E8" stroke="#1E1B2E" stroke-width="1.6"/><text x="214" y="23" text-anchor="middle" font-size="14" fill="#1E1B2E">馬</text><circle cx="46" cy="74" r="12.5" fill="#FFF7E8" stroke="#1E1B2E" stroke-width="1.6"/><text x="46" y="79" text-anchor="middle" font-size="14" fill="#1E1B2E">砲</text><circle cx="186" cy="102" r="12.5" fill="#FFF7E8" stroke="#1E1B2E" stroke-width="1.6"/><text x="186" y="107" text-anchor="middle" font-size="14" fill="#1E1B2E">卒</text><circle cx="130" cy="270" r="12.5" fill="#FFF7E8" stroke="#C83C74" stroke-width="1.6"/><text x="130" y="275" text-anchor="middle" font-size="14" fill="#C83C74">帥</text><circle cx="18" cy="270" r="12.5" fill="#FFF7E8" stroke="#C83C74" stroke-width="1.6"/><text x="18" y="275" text-anchor="middle" font-size="14" fill="#C83C74">車</text><circle cx="74" cy="214" r="12.5" fill="#FFF7E8" stroke="#C83C74" stroke-width="1.6"/><text x="74" y="219" text-anchor="middle" font-size="14" fill="#C83C74">馬</text><circle cx="130" cy="130" r="18" fill="none" stroke="#FFC93D" stroke-width="4"/><circle cx="130" cy="130" r="12.5" fill="#FFF7E8" stroke="#C83C74" stroke-width="1.6"/><text x="130" y="135" text-anchor="middle" font-size="14" fill="#C83C74">兵</text></g></svg>
+      <figcaption>↑ the soldier that crossed the river. relatable.</figcaption>
+    </figure>
+    <div>
+      <h3>I play xiangqi (Chinese chess)</h3>
+      <p style="margin:0"><span class="vi-term" lang="vi">Cờ tướng</span> <span class="tr2">(Vietnamese for xiangqi, literally "generals' chess")</span></p>
+      <p class="brag">All through high school I competed in xiangqi tournaments across Vietnam and came home with <b>a lot of medals and prizes</b>.</p>
+      <ul>
+        <li>It's good research training: think several moves ahead, and assume the other side has seen something you haven't.</li>
+        <li>My favorite rule: a soldier gets new moves once it crosses the river. As an international student, I feel personally represented.</li>
+        <li>Another rule: the general is never allowed to leave the palace. That's also how I'd describe deadline week.</li>
+      </ul>
+      <a class="chip challenge" href="mailto:haopham52d@gmail.com?subject=Xiangqi%20challenge">Challenge me to a game</a>
+    </div>
+  </div>
+
+  <aside class="margin-quote">
+    <p class="vi" lang="vi">"Đi một ngày đàng, học một sàng khôn."</p>
+    <small>"Travel a day's road, learn a basketful of wisdom." Vietnamese proverb: every journey teaches you something.</small>
+  </aside>
+
+  <section class="last">
+    <blockquote>I study how people find tiny things on gigapixel slides. I still lose my cursor on a 13-inch screen.</blockquote>
+    <div class="sticky">My extremely scientific debugging protocol:
+      <ol><li>Suspect the model.</li><li>Suspect the camera.</li><li>Discover I swapped x and y.</li><li>Commit: "improve spatial reasoning"</li></ol>
+    </div>
+  </section>
+
+  <footer>
+    <a class="chip" href="mailto:haopham52d@gmail.com">haopham52d@gmail.com</a>
+    <a class="chip" href="https://github.com/nighthunter57">GitHub</a>
+    <span class="made">Made in Houston, with too much <span lang="vi">cà phê sữa đá</span> (Vietnamese iced coffee with condensed milk). Updated November 2026.</span>
+  </footer>
+</main>
+</body>
+</html>
