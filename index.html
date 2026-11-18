@@ -223,6 +223,7 @@
     .last blockquote { font-size: 23px; }
     footer .made { margin-left: 0; width: 100%; }
   }
+  sup { line-height: 0; }
 </style>
 </head>
 <body>
@@ -346,8 +347,10 @@
         <h3>ProtoWSSS: weakly supervised segmentation in histopathology</h3>
         <p class="where">Collaboration led by Anh Mai Vu, PhD student</p>
         <ul>
-          <li><b>The method:</b> a one-stage framework that learns tissue regions from image-level labels alone, guided by learnable image prototypes and prompt-guided text prototypes, with a diversity term to cover varied tissue appearance. Evaluated on BCSS-WSSS and LUAD-HistoSeg.</li>
-          <li><b>My part:</b> reproduced reported experiments, traced discrepancies in the results, ran ablations, and changed code and settings to test improvements.</li>
+          <li><b>The problem:</b> outlining every tissue region on a pathology image by hand is slow expert work, but a label saying which tissue types appear in an image is cheap. Most weakly supervised methods train a classifier on those labels and read masks off its class activation maps, which light up only the most telling patch instead of the whole region, and then need a second training stage to clean the masks up.</li>
+          <li><b>The idea:</b> describe each tissue class with prototypes, learned reference examples of what that tissue looks like. Text prototypes come from short pathology descriptions encoded by CONCH, a pathology vision-language model, with learnable prompt tokens that adapt the wording to the dataset. Learnable image prototypes capture what the text misses, and a diversity term keeps them from collapsing into one, so they cover different appearances of the same tissue.</li>
+          <li><b>How it segments:</b> features from a LoRA-adapted CONCH encoder are compared with every prototype at four scales. The similarity maps give both the class prediction and the pixel-level mask, in one stage, with no separate segmentation model.</li>
+          <li><b>Results:</b> 71.36% mIoU on BCSS-WSSS (breast cancer), 1.94 points above the strongest prior method, and 78.17% mIoU on LUAD-HistoSeg (lung adenocarcinoma), 1.73 points above it, averaged over five random seeds. Ablations show the text and image prototypes help each other.</li>
         </ul>
       </div>
     </li>
@@ -358,7 +361,10 @@
         <h3>Partial optimal transport with a mixed-norm regularizer</h3>
         <p class="where">Acuitas Education summer research program. Supervisors: Minh Son Pham Dinh, Hai Lam Le, Gia Binh Tran, Minh Khoa Nguyen</p>
         <ul>
-          <li>Studied partial optimal transport, which moves only part of the mass between two distributions, with a mixed-norm elastic regularizer solved by an exterior-penalty method.</li>
+          <li><b>The problem:</b> optimal transport finds the cheapest way to move one distribution of mass onto another, for example matching the colors of two photos or the points of two 3D scans. Partial optimal transport moves only a set fraction of the mass, so outliers and unmatched points can be left behind. The usual fast solvers return dense plans in which every point sends a little mass everywhere, and the existing sparse alternatives treat each entry on its own, so they can't express group structure.</li>
+          <li><b>The idea:</b> add a mixed-norm elastic regularizer that scores the transport plan column by column, so mass is pushed to flow in structured groups, such as each target point receiving mass from source points of a single class. The regularizer is smooth and strongly convex, which lets the hard row and column limits move into a quadratic exterior penalty that an accelerated gradient method can solve.</li>
+          <li><b>Guarantee:</b> to our knowledge, the first specialized solver for this problem. It finds an &epsilon;-approximate plan in O(n<sup>7/8</sup> &epsilon;<sup>&minus;1</sup> ln(n/&epsilon;)) iterations, the same rate as earlier solvers that do not capture group structure.</li>
+          <li><b>Results:</b> against the generic CVXPY solver on color transfer, domain adaptation, and 3D point-cloud registration, it returned sparser plans at equal or lower cost in far fewer iterations (4,501 vs. 33,075 on color transfer), and reached 90.3% vs. 81.6% accuracy on a rotated two-moons domain adaptation task.</li>
           <li>The work is now being prepared as a journal manuscript (see below).</li>
         </ul>
       </div>
